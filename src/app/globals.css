@@ -1,26 +1,368 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Design System — Avinkumar Subburam Portfolio
+   Light & Dark Theme Support with Green Accent
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- Light Theme (Default) --- */
+  --color-page: #F3F4F6;
+  --color-surface: rgba(255, 255, 255, 0.7);
+  --color-surface-secondary: rgba(255, 255, 255, 0.5);
+  
+  --color-accent-soft: #D1FAE5; /* Emerald 100 */
+  --color-accent: #10B981; /* Emerald 500 */
+  --color-accent-hover: #059669; /* Emerald 600 */
+  --color-accent-light: #34D399; /* Emerald 400 */
+  --gradient-accent: linear-gradient(135deg, #10B981 0%, #047857 100%);
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #667085;
+  --color-text-muted: #98A2B3;
+
+  --color-border: rgba(255, 255, 255, 0.6);
+  --color-border-hover: rgba(255, 255, 255, 0.9);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 8px 30px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 12px 40px rgba(15, 23, 42, 0.10);
+  --shadow-nav: 0 1px 3px rgba(15, 23, 42, 0.05);
+
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-chrome: rgba(255, 255, 255, 0.6);
+}
+
+.dark {
+  /* --- Dark Theme --- */
+  --color-page: #0B0F19; /* Very dark slate/blue */
+  --color-surface: rgba(17, 24, 39, 0.65); /* Dark surface */
+  --color-surface-secondary: rgba(31, 41, 55, 0.5);
+  
+  --color-accent-soft: rgba(16, 185, 129, 0.15); 
+  --color-accent: #10B981; 
+  --color-accent-hover: #34D399; 
+  --color-accent-light: #6EE7B7; 
+  --gradient-accent: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.5);
+  --shadow-nav: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+  --nav-bg: rgba(17, 24, 39, 0.85);
+  --nav-chrome: rgba(17, 24, 39, 0.6);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-success: #22C55E;
+  --color-success-soft: #F0FDF4;
+
+  /* --- Typography --- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* --- Spacing --- */
+  --container-max: 1240px;
+  --section-gap: 128px;
+  --section-gap-mobile: 80px;
+  --nav-height: 72px;
+
+  /* --- Radii --- */
+  --radius-card: 16px;
+  --radius-button: 12px;
+  --radius-pill: 999px;
+  --radius-sm: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* --- Base Styles --- */
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Selection --- */
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* --- Focus visible --- */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Scrollbar --- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* --- Utility: Container --- */
+
+.container-main {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
+@media (max-width: 1023px) {
+  .container-main {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* --- Section Spacing --- */
+
+.section-spacing {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+@media (max-width: 767px) {
+  .section-spacing {
+    padding-top: var(--section-gap-mobile);
+    padding-bottom: var(--section-gap-mobile);
+  }
+}
+
+/* --- Typography Utilities --- */
+
+.heading-hero {
+  font-size: clamp(2.625rem, 5vw + 1rem, 5.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--color-text-primary);
+}
+
+.heading-section {
+  font-size: clamp(2rem, 3vw + 0.5rem, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+}
+
+.heading-card {
+  font-size: clamp(1.25rem, 1.5vw + 0.25rem, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+}
+
+.text-eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.text-body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.text-small {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* --- Button Base --- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: var(--radius-button);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  min-height: 48px;
+  text-decoration: none;
+  border: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--gradient-accent);
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.dark .btn-primary {
+  color: #000;
+  box-shadow: 0 4px 14px rgba(52, 211, 153, 0.15);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.dark .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.25);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1.5px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* --- Card Base (Glassmorphism) --- */
+
+.card {
+  background: var(--color-surface);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-border-hover);
+}
+
+/* --- Tech Pill --- */
+
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.tech-pill:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+.dark .tech-pill:hover {
+  color: #000;
+}
+
+/* --- Text Gradient --- */
+
+.text-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* --- Ambient Glow --- */
+
+.ambient-glow {
+  position: relative;
+  z-index: 1;
+}
+
+.ambient-glow::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background: var(--gradient-accent);
+  filter: blur(24px);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.dark .ambient-glow::before {
+  opacity: 0.4;
+  filter: blur(32px);
+}
+
+.ambient-glow:hover::before {
+  opacity: 0.8;
+  filter: blur(32px);
+}
+
+/* --- Reduced Motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
