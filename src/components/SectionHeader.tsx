@@ -15,7 +15,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <AnimateOnScroll
-      className={`mb-16 ${align === "center" ? "text-center" : ""}`}
+      className={`mb-10 lg:mb-12 ${align === "center" ? "text-center" : ""}`}
     >
       <p className="text-eyebrow mb-4">{eyebrow}</p>
       <h2

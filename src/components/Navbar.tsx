@@ -96,7 +96,7 @@ export default function Navbar() {
             aria-label="Go to top"
           >
             AVIN
-            <span style={{ color: "var(--color-accent)" }}>.</span>
+            <span style={{ color: "var(--color-accent-ink)" }}>.</span>
           </a>
 
           {/* Desktop Nav Links */}
@@ -110,7 +110,7 @@ export default function Navbar() {
                 style={{
                   color:
                     activeSection === link.href
-                      ? "var(--color-accent)"
+                      ? "var(--color-accent-ink)"
                       : "var(--color-text-secondary)",
                 }}
                 onMouseEnter={(e) => {
@@ -129,7 +129,7 @@ export default function Navbar() {
                   <motion.div
                     layoutId="nav-underline"
                     className="absolute bottom-0 left-4 right-4 h-0.5"
-                    style={{ backgroundColor: "var(--color-accent)" }}
+                    style={{ backgroundColor: "var(--color-accent-ink)" }}
                     transition={{
                       type: "spring",
                       stiffness: 400,
@@ -145,13 +145,14 @@ export default function Navbar() {
 
             {/* Resume CTA */}
             <a
-              href="/resume/Avinkumar-Subburam-Resume.pdf"
+              href="/resume/AvinkumarSubburamResume_20260710.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full transition-all"
               style={{
                 backgroundColor: "var(--color-accent)",
-                color: "white",
+                color: "var(--color-on-accent)",
+                fontWeight: 600,
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor =

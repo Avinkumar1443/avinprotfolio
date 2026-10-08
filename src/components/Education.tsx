@@ -24,7 +24,7 @@ export default function Education() {
                   className="absolute top-0 left-0 right-0 h-1"
                   style={{
                     background:
-                      "linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-light) 100%)",
+                      "linear-gradient(90deg, var(--color-accent-ink) 0%, var(--color-accent) 100%)",
                     opacity: 0.6,
                   }}
                 />
@@ -34,7 +34,7 @@ export default function Education() {
                     className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 mt-1"
                     style={{
                       backgroundColor: "var(--color-accent-soft)",
-                      color: "var(--color-accent)",
+                      color: "var(--color-accent-ink)",
                     }}
                   >
                     <GraduationCap size={24} />
@@ -48,7 +48,7 @@ export default function Education() {
                     </h3>
                     <p
                       className="text-base font-medium mb-3"
-                      style={{ color: "var(--color-accent)" }}
+                      style={{ color: "var(--color-accent-ink)" }}
                     >
                       {edu.institution}
                     </p>

@@ -58,7 +58,7 @@ export default function MobileMenu({
             style={{
               color:
                 activeSection === link.href
-                  ? "var(--color-accent)"
+                  ? "var(--color-accent-ink)"
                   : "var(--color-text-secondary)",
               backgroundColor:
                 activeSection === link.href
@@ -69,7 +69,7 @@ export default function MobileMenu({
             {activeSection === link.href && (
               <div
                 className="w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: "var(--color-accent)" }}
+                style={{ backgroundColor: "var(--color-accent-ink)" }}
               />
             )}
             {link.label}
@@ -82,7 +82,7 @@ export default function MobileMenu({
           style={{ borderTop: "1px solid var(--color-border)" }}
         >
           <a
-            href="/resume/Avinkumar-Subburam-Resume.pdf"
+            href="/resume/AvinkumarSubburamResume_20260710.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary w-full justify-center"

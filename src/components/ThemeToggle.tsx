@@ -31,8 +31,8 @@ export default function ThemeToggle() {
       }}
       aria-label="Toggle Dark Mode"
       onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--color-accent)";
-        e.currentTarget.style.color = "var(--color-accent)";
+        e.currentTarget.style.borderColor = "var(--color-accent-ink)";
+        e.currentTarget.style.color = "var(--color-accent-ink)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.borderColor = "var(--color-border)";

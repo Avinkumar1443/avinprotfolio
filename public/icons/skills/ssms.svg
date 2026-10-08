@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="SQL Server Management Studio icon">
+  <g fill="none" stroke-linejoin="round">
+    <path d="M90 148v215c0 38 61 64 142 64 20 0 40-2 57-6V206" fill="#1976BD"/>
+    <path d="M90 148c0-38 63-65 142-65s142 27 142 65-63 65-142 65-142-27-142-65" fill="#39A2D9"/>
+    <path d="M104 242c29 23 75 37 128 37 37 0 73-8 99-20M104 327c29 23 75 36 128 36 28 0 53-4 75-12" stroke="#BDEAFF" stroke-width="14" stroke-linecap="round"/>
+    <path d="M91 148c0 38 61 64 141 64s142-26 142-64" stroke="#08649F" stroke-width="12"/>
+  </g>
+  <g transform="translate(343 347)">
+    <path d="M-14-99h28l8 23c8 2 15 5 22 9l22-10 20 20-10 22c4 7 7 14 9 22l23 8v28l-23 8c-2 8-5 15-9 22l10 22-20 20-22-10c-7 4-14 7-22 9l-8 23h-28l-8-23c-8-2-15-5-22-9l-22 10-20-20 10-22c-4-7-7-14-9-22l-23-8V-5l23-8c2-8 5-15 9-22l-10-22 20-20 22 10c7-4 14-7 22-9z" fill="#E45052" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>
+    <circle r="40" fill="#fff"/>
+    <circle r="20" fill="#E45052"/>
+  </g>
+</svg>

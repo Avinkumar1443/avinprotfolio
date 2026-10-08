@@ -35,7 +35,7 @@ export default function Experience() {
                     className="absolute left-[11px] top-2 w-[18px] h-[18px] rounded-full hidden md:flex items-center justify-center"
                     style={{
                       backgroundColor: "var(--color-surface)",
-                      border: "3px solid var(--color-accent)",
+                      border: "3px solid var(--color-accent-ink)",
                     }}
                     aria-hidden="true"
                   >
@@ -57,7 +57,7 @@ export default function Experience() {
                         </h3>
                         <p
                           className="text-lg font-medium mt-1"
-                          style={{ color: "var(--color-accent)" }}
+                          style={{ color: "var(--color-accent-ink)" }}
                         >
                           {exp.role}
                         </p>
@@ -86,7 +86,7 @@ export default function Experience() {
                         className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full"
                         style={{
                           backgroundColor: "var(--color-accent-soft)",
-                          color: "var(--color-accent)",
+                          color: "var(--color-accent-ink)",
                         }}
                       >
                         <Briefcase size={12} />
@@ -105,8 +105,8 @@ export default function Experience() {
                           <span
                             className="mt-2 w-1.5 h-1.5 rounded-full shrink-0"
                             style={{
-                              backgroundColor: "var(--color-accent)",
-                              opacity: 0.5,
+                              backgroundColor: "var(--color-accent-ink)",
+                              opacity: 0.6,
                             }}
                             aria-hidden="true"
                           />

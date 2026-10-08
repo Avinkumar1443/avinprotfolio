@@ -24,7 +24,7 @@ export default function Certifications() {
                     ? "var(--shadow-card)"
                     : undefined,
                   borderColor: cert.isFlagship
-                    ? "var(--color-accent)"
+                    ? "var(--color-accent-ink)"
                     : undefined,
                 }}
                 onMouseEnter={(e) => {
@@ -42,7 +42,7 @@ export default function Certifications() {
                     className="absolute top-0 left-0 right-0 h-1"
                     style={{
                       background:
-                        "linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-light) 100%)",
+                        "linear-gradient(90deg, var(--color-accent-ink) 0%, var(--color-accent) 100%)",
                     }}
                   />
                 )}
@@ -56,7 +56,7 @@ export default function Certifications() {
                         ? "var(--color-accent-soft)"
                         : "var(--color-surface-secondary)",
                       color: cert.isFlagship
-                        ? "var(--color-accent)"
+                        ? "var(--color-accent-ink)"
                         : "var(--color-text-muted)",
                     }}
                   >
@@ -66,7 +66,7 @@ export default function Certifications() {
                     className="text-xs font-semibold uppercase tracking-wider"
                     style={{
                       color: cert.isFlagship
-                        ? "var(--color-accent)"
+                        ? "var(--color-accent-ink)"
                         : "var(--color-text-muted)",
                     }}
                   >

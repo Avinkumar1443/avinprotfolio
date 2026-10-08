@@ -48,7 +48,7 @@ export default function Footer() {
               className="text-xl font-bold tracking-tight inline-block mb-2"
               style={{ color: "var(--color-text-primary)" }}
             >
-              AVIN<span style={{ color: "var(--color-accent)" }}>.</span>
+              AVIN<span style={{ color: "var(--color-accent-ink)" }}>.</span>
             </a>
             <p
               className="text-sm"
@@ -73,8 +73,8 @@ export default function Footer() {
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor =
                   "var(--color-accent-soft)";
-                e.currentTarget.style.color = "var(--color-accent)";
-                e.currentTarget.style.borderColor = "var(--color-accent)";
+                e.currentTarget.style.color = "var(--color-accent-ink)";
+                e.currentTarget.style.borderColor = "var(--color-accent-ink)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor =
@@ -97,8 +97,8 @@ export default function Footer() {
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor =
                   "var(--color-accent-soft)";
-                e.currentTarget.style.color = "var(--color-accent)";
-                e.currentTarget.style.borderColor = "var(--color-accent)";
+                e.currentTarget.style.color = "var(--color-accent-ink)";
+                e.currentTarget.style.borderColor = "var(--color-accent-ink)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor =
@@ -121,8 +121,8 @@ export default function Footer() {
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor =
                   "var(--color-accent-soft)";
-                e.currentTarget.style.color = "var(--color-accent)";
-                e.currentTarget.style.borderColor = "var(--color-accent)";
+                e.currentTarget.style.color = "var(--color-accent-ink)";
+                e.currentTarget.style.borderColor = "var(--color-accent-ink)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor =

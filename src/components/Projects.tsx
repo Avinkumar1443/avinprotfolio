@@ -13,27 +13,13 @@ export default function Projects() {
           heading="Selected Projects"
         />
 
-        <div className="space-y-24 lg:space-y-32">
+        <div className="project-list">
           {projects.map((project, index) => (
-            <div
+            <ProjectCard
               key={project.number}
-              style={
-                project.isFlagship
-                  ? {
-                      padding: "40px",
-                      backgroundColor: "var(--color-surface)",
-                      borderRadius: "var(--radius-card)",
-                      border: "1px solid var(--color-border)",
-                      boxShadow: "var(--shadow-card)",
-                    }
-                  : undefined
-              }
-            >
-              <ProjectCard
-                project={project}
-                reversed={index % 2 !== 0}
-              />
-            </div>
+              project={project}
+              reversed={index % 2 !== 0}
+            />
           ))}
         </div>
       </div>

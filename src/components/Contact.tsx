@@ -94,7 +94,7 @@ export default function Contact() {
                     className="w-11 h-11 rounded-xl flex items-center justify-center transition-colors shrink-0"
                     style={{
                       backgroundColor: "var(--color-accent-soft)",
-                      color: "var(--color-accent)",
+                      color: "var(--color-accent-ink)",
                     }}
                   >
                     <Mail size={20} />
@@ -123,7 +123,7 @@ export default function Contact() {
                     className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
                     style={{
                       backgroundColor: "var(--color-accent-soft)",
-                      color: "var(--color-accent)",
+                      color: "var(--color-accent-ink)",
                     }}
                   >
                     <Phone size={20} />
@@ -149,7 +149,7 @@ export default function Contact() {
                     className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
                     style={{
                       backgroundColor: "var(--color-accent-soft)",
-                      color: "var(--color-accent)",
+                      color: "var(--color-accent-ink)",
                     }}
                   >
                     <MapPin size={20} />
@@ -180,7 +180,7 @@ export default function Contact() {
                     className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
                     style={{
                       backgroundColor: "var(--color-accent-soft)",
-                      color: "var(--color-accent)",
+                      color: "var(--color-accent-ink)",
                     }}
                   >
                     <Globe size={20} />
@@ -221,7 +221,7 @@ export default function Contact() {
                   LinkedIn
                 </a>
                 <a
-                  href="/resume/Avinkumar-Subburam-Resume.pdf"
+                  href="/resume/AvinkumarSubburamResume_20260710.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download
@@ -274,9 +274,9 @@ export default function Contact() {
                       color: "var(--color-text-primary)",
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = "var(--color-accent)";
+                      e.target.style.borderColor = "var(--color-accent-ink)";
                       e.target.style.boxShadow =
-                        "0 0 0 3px rgba(37, 99, 235, 0.1)";
+                        "0 0 0 3px rgba(200, 255, 48, 0.35)";
                     }}
                     onBlur={(e) => {
                       e.target.style.borderColor = "var(--color-border)";
@@ -310,9 +310,9 @@ export default function Contact() {
                       color: "var(--color-text-primary)",
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = "var(--color-accent)";
+                      e.target.style.borderColor = "var(--color-accent-ink)";
                       e.target.style.boxShadow =
-                        "0 0 0 3px rgba(37, 99, 235, 0.1)";
+                        "0 0 0 3px rgba(200, 255, 48, 0.35)";
                     }}
                     onBlur={(e) => {
                       e.target.style.borderColor = "var(--color-border)";
@@ -346,9 +346,9 @@ export default function Contact() {
                       color: "var(--color-text-primary)",
                     }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = "var(--color-accent)";
+                      e.target.style.borderColor = "var(--color-accent-ink)";
                       e.target.style.boxShadow =
-                        "0 0 0 3px rgba(37, 99, 235, 0.1)";
+                        "0 0 0 3px rgba(200, 255, 48, 0.35)";
                     }}
                     onBlur={(e) => {
                       e.target.style.borderColor = "var(--color-border)";

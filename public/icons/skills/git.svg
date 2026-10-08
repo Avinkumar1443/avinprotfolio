@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Git icon">
+  <rect x="113" y="113" width="286" height="286" rx="24" transform="rotate(45 256 256)" fill="#F05032"/>
+  <path d="M201 187v137m0-115 109 109m0-79v79" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="201" cy="187" r="30" fill="#fff"/>
+  <circle cx="201" cy="324" r="30" fill="#fff"/>
+  <circle cx="310" cy="239" r="30" fill="#fff"/>
+</svg>

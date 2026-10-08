@@ -56,17 +56,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col font-sans antialiased selection:bg-green-600 selection:text-white transition-colors duration-300 relative overflow-x-hidden">
+      <body className="min-h-screen flex flex-col font-sans antialiased selection:bg-[#C8FF30] selection:text-[#171A19] transition-colors duration-300 relative overflow-x-hidden">
         {/* Ambient Background Glow for Glass Effect */}
         <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
-          <div 
-            className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full blur-[120px] opacity-[0.15] dark:opacity-[0.12]"
-            style={{ background: "var(--gradient-accent)" }}
-          />
-          <div 
-            className="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full blur-[120px] opacity-[0.15] dark:opacity-[0.12]"
-            style={{ background: "var(--gradient-accent)" }}
-          />
+          <div className="bg-glow bg-glow--top-left" />
+          <div className="bg-glow bg-glow--bottom-right" />
         </div>
 
         <ThemeProvider

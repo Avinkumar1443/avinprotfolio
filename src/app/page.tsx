@@ -8,11 +8,13 @@ import Education from "@/components/Education";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SideRail from "@/components/SideRail";
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       <Navbar />
+      <SideRail />
       <Hero />
       <About />
       <TechStack />

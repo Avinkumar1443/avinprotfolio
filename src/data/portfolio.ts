@@ -10,9 +10,9 @@ export interface NavLink {
   href: string;
 }
 
-export interface TechCategory {
+export interface CoreSkill {
   name: string;
-  items: string[];
+  icon: string; // Filename for the SVG in /public/icons/skills/
 }
 
 export interface Experience {
@@ -28,13 +28,15 @@ export interface Project {
   number: string;
   title: string;
   subtitle?: string;
-  tech: string[];
   role?: string;
-  description: string[];
-  highlights?: string[];
-  metric?: { value: string; label: string };
-  image: string;
-  isFlagship?: boolean;
+  summary: string;
+  points: string[];
+  stack: string[];
+  skills: string[];
+  /** Small label shown on the image, e.g. "Lab Operations" */
+  badge: string;
+  /** Screenshot path under /public, e.g. "/Image/projects/smile.png". Leave empty to show the placeholder. */
+  image?: string;
 }
 
 export interface Certification {
@@ -78,99 +80,61 @@ export const navLinks: NavLink[] = [
 // --- Hero ---
 
 export const hero = {
-  statusLabel: "Available for Software Engineering Opportunities",
-  headline: {
-    greeting: "Hi, I'm Avinkumar.",
-    roles: ["Software Developer", "& Full Stack Engineer."],
-  },
+  statusLabel: "Available for software engineering roles",
+  name: "Avinkumar Subburam",
+  role: "Software Developer & Full Stack Engineer",
   description:
     "I build scalable enterprise web applications, backend services, API-driven systems, and responsive user experiences using ASP.NET Core, React.js, Next.js, SQL Server, and PostgreSQL.",
   primaryCta: { label: "View My Work", href: "#projects" },
   secondaryCta: {
     label: "Download Resume",
-    href: "/resume/Avinkumar-Subburam-Resume.pdf",
+    href: "/resume/AvinkumarSubburamResume_20260710.pdf",
   },
-  techPills: ["ASP.NET Core", "React.js", "Next.js", "SQL Server", "PostgreSQL"],
 };
 
 // --- About ---
 
 export const about = {
-  eyebrow: "01 / About",
-  heading: "Building reliable digital products from interface to database.",
+  eyebrow: "01 / ABOUT",
+  heading: ["I build enterprise software that", "connects UI, APIs and data."],
   paragraphs: [
-    "Software Developer with hands-on experience building enterprise web applications using React.js, Next.js, ASP.NET Core, REST APIs, SQL Server, and PostgreSQL.",
-    "Experienced in frontend and backend development, API integration, database-driven workflows, debugging, and production support. Strong focus on clean code, application performance, responsive UI/UX, and maintainable software solutions.",
+    "I'm Avinkumar Subburam, a Software Developer focused on building scalable enterprise web applications, backend services, and database-driven systems.",
+    "My work spans frontend development, backend APIs, database workflows, debugging, and production support for real-world business applications.",
   ],
-  cards: [
-    {
-      title: "Enterprise Development",
-      description:
-        "Building and maintaining large-scale enterprise applications used in real-world business environments.",
-      icon: "Building2" as const,
-    },
-    {
-      title: "Full Stack Engineering",
-      description:
-        "End-to-end development from responsive frontend interfaces to scalable backend services and databases.",
-      icon: "Layers" as const,
-    },
-    {
-      title: "Production Support",
-      description:
-        "Debugging, defect resolution, performance optimization, and deployment support across QA, UAT, and Production.",
-      icon: "ShieldCheck" as const,
-    },
+  capabilitiesLabel: "What I work across",
+  capabilities: [
+    "Enterprise Applications",
+    "Full Stack Engineering",
+    "API Integration",
+    "Database-Driven Systems",
+    "Production Support",
   ],
+  facts: [
+    { label: "Currently", value: "Software Developer at Vaanam Technologies" },
+    { label: "Core Stack", value: "ASP.NET Core / React.js / Next.js" },
+    { label: "Based In", value: "Coimbatore, India" },
+  ],
+  cta: { lead: "More about my work", label: "View Experience", href: "#experience" },
 };
 
-// --- Technology Stack ---
+// --- Core Technology Stack ---
 
-export const techStack: TechCategory[] = [
-  {
-    name: "Languages",
-    items: ["C#", "JavaScript", "SQL", "HTML5", "CSS3"],
-  },
-  {
-    name: "Frontend",
-    items: ["React.js", "Next.js", "Bootstrap 5", "Responsive Web Design", "UI/UX"],
-  },
-  {
-    name: "Backend",
-    items: [
-      "ASP.NET Core",
-      "ASP.NET MVC Core",
-      "ASP.NET Core Web API",
-      "RESTful APIs",
-      "Microservices",
-    ],
-  },
-  {
-    name: "Databases",
-    items: ["SQL Server", "PostgreSQL", "MySQL"],
-  },
-  {
-    name: "Development Tools",
-    items: [
-      "Visual Studio",
-      "Visual Studio Code",
-      "SQL Server Management Studio (SSMS)",
-      "Git",
-    ],
-  },
-  {
-    name: "Concepts",
-    items: [
-      "CRUD Operations",
-      "REST API Integration",
-      "Authentication",
-      "Role-Based Access Control",
-      "Database Design",
-      "Query Optimization",
-      "Debugging",
-      "Performance Optimization",
-    ],
-  },
+export const coreSkillsRow1: CoreSkill[] = [
+  { name: "C#", icon: "csharp.png" },
+  { name: "ASP.NET Core", icon: "dotnet.png" },
+  { name: "ASP.NET MVC Core", icon: "ASP.NET Core MVC Badge.png" },
+  { name: "ASP.NET Core Web API", icon: "dotnet.png" },
+  { name: "React.js", icon: "react.svg" },
+  { name: "Next.js", icon: "nextjs.png" },
+];
+
+export const coreSkillsRow2: CoreSkill[] = [
+  { name: "JavaScript", icon: "javascript.svg" },
+  { name: "SQL Server", icon: "sqlserver.svg" },
+  { name: "PostgreSQL", icon: "postgresql.svg" },
+  { name: "MySQL", icon: "mysql.svg" },
+  { name: "SSMS", icon: "ssms.svg" },
+  { name: "Git", icon: "git.svg" },
 ];
 
 // --- Experience ---
@@ -183,10 +147,10 @@ export const experiences: Experience[] = [
     period: "Apr 2025 – Present",
     type: "Full-time",
     responsibilities: [
-      "Develop and maintain enterprise web applications using React.js, ASP.NET Core, REST APIs, SQL Server, and PostgreSQL.",
+      "Worked across: ASP.NET Core, React.js, Next.js, SQL Server, PostgreSQL, REST APIs.",
       "Build responsive frontend components and integrate them with scalable backend services and APIs to support business workflows.",
-      "Develop and maintain backend functionality using ASP.NET Core, including business logic, API endpoints, database operations, and application integrations.",
-      "Work with SQL Server and PostgreSQL for CRUD operations, data retrieval, query optimization, and application data management.",
+      "Develop and maintain backend functionality including business logic, API endpoints, database operations, and application integrations.",
+      "Work with SQL Server and PostgreSQL for data retrieval, query optimization, and application data management.",
       "Support application debugging, issue resolution, performance improvements, and responsive UI/UX enhancements.",
       "Contribute to enterprise applications used in real-world business environments, including development, debugging, defect resolution, database verification, and QA/UAT/Production deployment support.",
     ],
@@ -198,9 +162,10 @@ export const experiences: Experience[] = [
     period: "Dec 2024 – Mar 2025",
     type: "Internship",
     responsibilities: [
-      "Developed an Admin Module using ASP.NET MVC Core to support application administration and CRUD operations.",
+      "Worked across: ASP.NET MVC Core, SQL Server.",
+      "Developed an Admin Module using ASP.NET MVC Core to support application administration.",
       "Integrated the application with SQL Server for structured data storage, retrieval, and database operations.",
-      "Worked with ASP.NET MVC Core architecture, conditional logic, database connectivity, and backend application development.",
+      "Worked with conditional logic, database connectivity, and backend application development.",
     ],
   },
 ];
@@ -212,58 +177,87 @@ export const projects: Project[] = [
     number: "01",
     title: "SMIL-e",
     subtitle: "EMC Lab Management System",
-    tech: ["ASP.NET MVC Core", "SQL Server", "SSMS"],
-    description: [
-      "Contributed to SMIL-e, a large-scale enterprise laboratory management application used across Bosch operations in Coimbatore and Bengaluru.",
-      "Developed and maintained application modules and business workflows using ASP.NET MVC Core, supporting laboratory and project management operations.",
-      "Worked extensively with SQL Server and SQL Server Management Studio (SSMS) for data retrieval, CRUD operations, production data verification, and database-driven workflows.",
+    summary:
+      "A large-scale enterprise laboratory management application used across Bosch operations in Coimbatore and Bengaluru.",
+    points: [
+      "Application modules and laboratory / project business workflows",
+      "Role-based access control, reporting and email notifications",
+      "Production data verification with QA, UAT and production support",
     ],
-    highlights: [
-      "Project processing and test-related modules",
-      "Reporting and role-based functionality",
-      "Email notifications and production issue resolution",
-      "Debugging, defect fixes, and deployment support across QA, UAT, and Production environments",
+    stack: ["ASP.NET MVC Core", "SQL Server", "SSMS"],
+    skills: [
+      "CRUD Operations",
+      "Role-Based Access Control",
+      "Reporting",
+      "Database Verification",
+      "Debugging",
+      "Production Support",
     ],
-    // Replace with actual screenshot: /public/images/projects/smile.png
-    image: "/images/projects/smile.png",
-    isFlagship: true,
+    badge: "Lab Operations",
+    // Add screenshot: /public/Image/projects/smile.png
+    image: "",
   },
   {
     number: "02",
     title: "Enterprise CRM Solution",
-    tech: ["Next.js", "ASP.NET Core Web API", "PostgreSQL"],
     role: "Core Feature Developer",
-    description: [
-      "Enterprise CRM platform supporting large-scale business operations, events, customer workflows, and payment processing.",
-      "Developed application features using Next.js and ASP.NET Core Web API, including dynamic form workflows and frontend-backend integrations.",
-      "Integrated secure payment functionality and worked with optimized PostgreSQL queries to improve scalability and application performance.",
+    summary:
+      "An enterprise CRM platform supporting business operations, events, customer workflows and payment processing.",
+    points: [
+      "Dynamic form workflows across frontend and backend",
+      "Secure payment integration through ASP.NET Core Web APIs",
+      "Optimized PostgreSQL queries for scalability and performance",
     ],
-    // Replace with actual screenshot: /public/images/projects/crm.png
-    image: "/images/projects/crm.png",
+    stack: ["Next.js", "ASP.NET Core Web API", "PostgreSQL"],
+    skills: [
+      "REST API Integration",
+      "Dynamic Form Workflows",
+      "Payment Integration",
+      "Query Optimization",
+      "Frontend / Backend Integration",
+    ],
+    badge: "Customer Workflows",
+    // Add screenshot: /public/Image/projects/crm.png
+    image: "",
   },
   {
     number: "03",
     title: "Marketing CMS Platform",
-    tech: ["Next.js", "Strapi CMS", "REST APIs"],
     role: "Full Stack Developer",
-    description: [
-      "Modern marketing platform using Next.js and Strapi headless CMS.",
-      "Built SEO-focused marketing pages and integrated REST APIs for real-time lead capture and application communication.",
+    summary:
+      "A modern marketing platform built with Next.js and a Strapi headless CMS.",
+    points: [
+      "SEO-focused marketing pages",
+      "REST APIs for real-time lead capture",
+      "60% reduction in content deployment time",
     ],
-    metric: { value: "60%", label: "Reduction in content deployment time" },
-    // Replace with actual screenshot: /public/images/projects/cms.png
-    image: "/images/projects/cms.png",
+    stack: ["Next.js", "Strapi CMS", "REST APIs"],
+    skills: [
+      "SEO",
+      "REST API Integration",
+      "Content Management",
+      "Lead Capture",
+      "Performance Optimization",
+    ],
+    badge: "Content → Leads",
+    // Add screenshot: /public/Image/projects/cms.png
+    image: "",
   },
   {
     number: "04",
     title: "Cara E-Commerce Website",
-    tech: ["HTML5", "CSS3", "Bootstrap 5"],
-    description: [
-      "Responsive clothing-focused e-commerce website with login, home, about, and product category pages.",
-      "Implemented mobile-friendly layouts using HTML5, CSS3, and Bootstrap 5.",
+    summary:
+      "A responsive clothing e-commerce website with login, home, about and product category pages.",
+    points: [
+      "Mobile-friendly layouts with Bootstrap 5",
+      "Product category pages for browsing the catalogue",
+      "Login, home and about pages in one consistent UI",
     ],
-    // Replace with actual screenshot: /public/images/projects/cara.png
-    image: "/images/projects/cara.png",
+    stack: ["HTML5", "CSS3", "Bootstrap 5"],
+    skills: ["Responsive Web Design", "Mobile-Friendly UI", "Bootstrap Layouts"],
+    badge: "Responsive UI",
+    // Add screenshot: /public/Image/projects/cara.png
+    image: "",
   },
 ];
 
